@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Navbar</title>
+  <style>
+  
+
+body {
+  font-family:'Times New Roman', Times, serif;
+  background-color: #ffffff;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #5a0000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-start-start-radius: 10px;
+}
+
+.logo img{
+ height:65px ;
+ width: 65px;
+ border-start-start-radius: 10px;
+ 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ebf709;
+}
+.image-container{
+   position: relative;
+   width: 100%;
+   margin: auto;
+}
+.image-container img{
+    width: 100%;
+    height: auto;
+    display: block;
+   
+}
+.text-overlay{
+    position: absolute;
+    top: 40%; /* Vertical center */
+    left: 30%; /* Horizontal center */
+    transform: translate(-50%, -50%); /* Center the text */
+    color: rgb(129, 2, 2);
+    text-align: center;
+    /*background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+}
+.text-overlay p{
+  font-weight: 500;
+  font-size: medium;
+  white-space: nowrap;
+}
+.bot-image-container{
+   position: relative;
+   width: 100%;
+   margin: auto;
+}
+.background-img{
+   width: 100%;
+   height: auto;
+   display: block;
+   
+}
+.chat-overlay{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  gap: 10px;
+  align-items: center;
+  /*background-color: rgba(255, 255, 255, 0.8); /* Optional overlay bg */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+}
+.chat-overlay h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #610202;
+}
+.chat-overlay input{
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #5e0808;
+  margin-bottom: 10px;
+}
+.chat-overlay button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #550000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+#response {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #222;
+  white-space: pre-wrap;
+}
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(91, 1, 1); /* Black background */
+}
+
+.modal-content {
+  background-color: #fff8b3; /* light yellow */
+  color: #560000; /* red text */
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #560000;
+}
+
+.close-button:hover {
+  color: rgb(94, 0, 0);
+}
+
+.about-container{
+   position: relative;
+   width: 100%;
+   margin: auto;
+   background-color: #570000;
+}
+.about-container img{
+    width: 100%;
+    height: auto;
+    display: block;
+  
+}
+.wrt{
+  position: absolute;
+      top: 30%; /* Vertical center */
+      left: 45%; /* Horizontal center */
+      transform: translate(-50%, -50%); /* Center the text */
+      color: rgb(129, 2, 2);
+      text-align: center;
+      /*background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.wrt h4{
+  color: #580202;
+  font-size: 40px;
+  
+}
+.contact-container{
+  position: relative;
+   width: 100%;
+   margin: auto;
+}
+.contact-container img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.co{
+  position: absolute;
+  top: 40%; 
+  left: 45%;
+  transform: translate(-50%, -50%); /* Center the text */
+  color: rgb(102, 0, 0);
+  text-align: center;
+}
+.co h5{
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.foot{
+  background-color: #6c0000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  position: relative;
+  width: 97.25%;
+  
+}
+
+
+
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="static/img/logo.jpeg">
+      </div>
+      <ul class="nav-links" onclick="toggleMenu()">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#service">SERVICES</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div>
+      <div class="home" id="home">
+        <div class="image-container">
+          <img src="static/img/hm bg.jpg"> 
+          <div class="text-overlay">
+            <h1>Welcome </h1>
+            <p>"EXPLORE THE WORLD OF FOOD"</p>
+          </div>
+        </div>
+      </div>
+      <div class="services" id="service">
+        <div class="bot-image-container">
+          <img src="static/img/ser bg.jpg" alt="Food Background" class="background-img" >
+          <div class="chat-overlay">
+             <h2>Explore The Ingredients</h2>
+             <input type="text" id=foodInput placeholder="Enter food name" />
+             <button onclick="getFoodInfo()">Search</button>
+             <div id="response"></div>
+          </div>
+          <div id="responseModal" class="modal">
+              <div class="modal-content">
+                 <span class="close-button" onclick="closeModal()">✖</span>
+                 <h3>Chatbot Response</h3>
+                 <p id="responseText">Loading...</p>
+              </div>
+           </div>
+        </div>
+      </div>
+      <div class="about" id="about">
+        <div class="about-container">
+          <img src="static/img/ab bg.png">
+          <div class="wrt">
+            <h4>ABOUT US</h4>
+            <p>ASDFGHFGDHG FGDF GUYDFGYJ RFTYSEDHF JG FTERFDS FHEDF</P>
+          </div>
+        </div>
+      </div>
+      <div class="contact" id="contact">
+        <div class="contact-container">
+          <img src="static/img/co bg.jpg">
+          <div class="co">
+             <h5>CONTACT </h5>
+             <p>phone:1234567889</p>
+             <p>mail:asdfg@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <footer class="foot">
+           <p>&copy; 2025 MyWebsite. All rights reserved.</p>
+           <p>Contact us: info@mywebsite.com</p>
+        </footer>
+      </div>
+
+     
+    </div>
+  </header>
+<script>
+
+  // Get DOM elements
+const foodInput = document.getElementById("foodInput");
+const responseDiv = document.getElementById("response");
+const modal = document.getElementById("responseModal");
+const responseText = document.getElementById("responseText");
+
+// Function to fetch recipe from backend
+async function getFoodInfo() {
+    const ingredients = foodInput.value.trim();
+    
+    if (!ingredients) {
+        alert("Please enter ingredients!");
+        return;
+    }
+
+    try {
+        // Show loading state
+        responseText.textContent = "Finding recipes...";
+        openModal();
+
+        // Call your Python backend
+        const response = await fetch("/api/get_recipe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ingredients })
+        });
+
+        if (!response.ok) throw new Error("Failed to fetch recipes");
+
+        const data = await response.json();
+        
+        // Display the AI response
+        if (data.recipe) {
+            responseText.innerHTML = data.recipe.replace(/\n/g, "<br>"); // Preserve line breaks
+        } else {
+            responseText.textContent = "No recipes found. Try different ingredients!";
+        }
+
+    } catch (error) {
+        console.error("Error:", error);
+        responseText.textContent = "Error fetching recipes. Please try again.";
+    }
+}
+
+// Modal controls
+function openModal() {
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    if (event.target === modal) {
+        closeModal();
+    }
+};
+</script>
+
+</body> 
+</html>
+
+
