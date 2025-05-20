@@ -239,7 +239,7 @@ body {
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="{{ url_for('static', filename='img/logo.jpeg') }}">
+        <img src="static/img/logo.jpg">
       </div>
       <ul class="nav-links" onclick="toggleMenu()">
         <li><a href="#home">HOME</a></li>
@@ -251,7 +251,7 @@ body {
     <div>
       <div class="home" id="home">
         <div class="image-container">
-          <img src="{{ url_for('static', filename='img/hm bg.jpeg') }}"> 
+          <img src="{{ url_for('static', filename='img/hm bg.jpg') }}"> 
           <div class="text-overlay">
             <h1>Welcome </h1>
             <p>"EXPLORE THE WORLD OF FOOD"</p>
@@ -260,7 +260,7 @@ body {
       </div>
       <div class="services" id="service">
         <div class="bot-image-container">
-          <img src="{{ url_for('static', filename='img/ser bg.jpeg') }}" alt="Food Background" class="background-img" >
+          <img src="{{ url_for('static', filename='img/ser bg.jpg') }}" alt="Food Background" class="background-img" >
           <div class="chat-overlay">
              <h2>Explore The Ingredients</h2>
              <input type="text" id=foodInput placeholder="Enter food name" />
@@ -287,7 +287,7 @@ body {
       </div>
       <div class="contact" id="contact">
         <div class="contact-container">
-          <img src="{{ url_for('static', filename='img/co bg.jpeg') }}">
+          <img src="{{ url_for('static', filename='img/co bg.jpg') }}">
           <div class="co">
              <h5>CONTACT </h5>
              <p>phone:1234567889</p>
