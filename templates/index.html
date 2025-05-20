@@ -239,7 +239,7 @@ body {
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="static/img/logo.jpeg">
+        <img src="{{ url_for('static', filename='img/logo.jpeg') }}">
       </div>
       <ul class="nav-links" onclick="toggleMenu()">
         <li><a href="#home">HOME</a></li>
@@ -251,7 +251,7 @@ body {
     <div>
       <div class="home" id="home">
         <div class="image-container">
-          <img src="static/img/hm bg.jpg"> 
+          <img src="{{ url_for('static', filename='img/hm bg.jpeg') }}"> 
           <div class="text-overlay">
             <h1>Welcome </h1>
             <p>"EXPLORE THE WORLD OF FOOD"</p>
@@ -260,7 +260,7 @@ body {
       </div>
       <div class="services" id="service">
         <div class="bot-image-container">
-          <img src="static/img/ser bg.jpg" alt="Food Background" class="background-img" >
+          <img src="{{ url_for('static', filename='img/ser bg.jpeg') }}" alt="Food Background" class="background-img" >
           <div class="chat-overlay">
              <h2>Explore The Ingredients</h2>
              <input type="text" id=foodInput placeholder="Enter food name" />
@@ -278,7 +278,7 @@ body {
       </div>
       <div class="about" id="about">
         <div class="about-container">
-          <img src="static/img/ab bg.png">
+          <img src="{{ url_for('static', filename='img/ab bg.png') }}">
           <div class="wrt">
             <h4>ABOUT US</h4>
             <p>ASDFGHFGDHG FGDF GUYDFGYJ RFTYSEDHF JG FTERFDS FHEDF</P>
@@ -287,7 +287,7 @@ body {
       </div>
       <div class="contact" id="contact">
         <div class="contact-container">
-          <img src="static/img/co bg.jpg">
+          <img src="{{ url_for('static', filename='img/co bg.jpeg') }}">
           <div class="co">
              <h5>CONTACT </h5>
              <p>phone:1234567889</p>
